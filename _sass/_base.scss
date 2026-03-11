@@ -1,0 +1,67 @@
+@charset "utf-8";
+@import "variables";
+
+// Base styles — organic, readable, textured
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $color-ink;
+  background-color: $color-parchment;
+  // Subtle paper/grain texture (CSS noise overlay)
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, $color-cream 0%, $color-parchment 100%);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $color-crimson;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-crimson-light;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: $space-md;
+  color: $color-ink;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+
+// Thin crimson horizontal rules as section dividers
+hr {
+  border: none;
+  height: 1px;
+  background-color: $color-crimson;
+  opacity: 0.5;
+  margin: $space-lg 0;
+}

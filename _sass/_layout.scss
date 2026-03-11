@@ -1,0 +1,97 @@
+@import "variables";
+
+// Main content wrapper
+.site-wrap {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+// Site header — logo + nav
+.site-header {
+  padding: $space-lg 0;
+  border-bottom: 1px solid rgba($color-crimson, 0.2);
+  margin-bottom: $space-xl;
+
+  .site-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+  }
+}
+
+.site-header .site-logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Site footer
+.site-footer {
+  margin-top: $space-2xl;
+  padding-bottom: $space-xl;
+
+  .footer-nav {
+    margin-bottom: $space-sm;
+  }
+}
+
+.footer__tagline {
+  font-size: 0.875rem;
+  color: $color-muted;
+  margin: 0;
+}
+
+// Two-column layout for blog (main + sidebar)
+.layout-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr $sidebar-width;
+  gap: $space-xl;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-content {
+  min-width: 0;
+}
+
+// Sidebar — Edward's Corner, etc.
+// TODO: Add Instagram embed placeholder in sidebar
+.sidebar {
+  position: sticky;
+  top: $space-lg;
+
+  @media (max-width: 768px) {
+    position: static;
+  }
+}
+
+.sidebar__block {
+  background: rgba($color-cream, 0.7);
+  border: 1px solid rgba($color-crimson, 0.2);
+  border-radius: $border-radius;
+  padding: $space-md;
+  margin-bottom: $space-lg;
+}
+
+.sidebar__title {
+  font-family: $font-display;
+  font-size: 1rem;
+  color: $color-crimson;
+  margin-bottom: $space-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Section spacing
+.section {
+  margin-bottom: $space-xl;
+}
+
+.section__title {
+  margin-bottom: $space-lg;
+}

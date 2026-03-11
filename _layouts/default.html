@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital@0;1&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  {% feed_meta %}
+  {% seo %}
+  <!-- TODO: Add search functionality (Lunr.js works well with Jekyll) -->
+</head>
+<body>
+  {% include header.html %}
+  <main class="site-wrap" role="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <hr>
+  <div class="site-wrap">
+    <nav class="footer-nav" aria-label="Footer">
+      <ul class="nav__list">
+        {% for link in site.nav_links %}
+        <li><a class="nav__link" href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <!-- TODO: Consider adding a newsletter signup (ConvertKit free tier integrates cleanly) -->
+    <p class="footer__tagline">Made with love (and Edward's supervision).</p>
+  </div>
+</footer>

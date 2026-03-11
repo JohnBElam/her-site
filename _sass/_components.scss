@@ -1,0 +1,274 @@
+@import "variables";
+
+// Logo — "QuirkiCorgi" with "Corgi" in crimson
+.site-logo {
+  font-family: $font-display;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $color-ink;
+
+  .site-logo__corgi {
+    color: $color-crimson;
+  }
+}
+
+// Nav — wavy crimson underline on hover
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md $space-lg;
+}
+
+.nav__link {
+  font-family: $font-body;
+  font-size: 1rem;
+  color: $color-ink;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-crimson;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: $color-crimson;
+    text-underline-offset: 4px;
+  }
+}
+
+.nav__link--active {
+  color: $color-crimson;
+  font-weight: 600;
+}
+
+// Category tags — small stamped monospace labels
+.tag {
+  display: inline-block;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: $space-xs $space-sm;
+  border: 1px solid $color-crimson;
+  color: $color-crimson;
+  background: rgba($color-crimson, 0.06);
+  border-radius: $border-radius;
+  margin-right: $space-xs;
+  margin-bottom: $space-xs;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin: $space-sm 0;
+}
+
+// Post cards — cream background, crimson left-border on hover
+.post-card {
+  background: rgba($color-cream, 0.8);
+  border: 1px solid rgba($color-crimson, 0.15);
+  border-left: 3px solid transparent;
+  border-radius: $border-radius;
+  padding: $space-lg;
+  margin-bottom: $space-lg;
+  transition: border-left-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-left-color: $color-crimson;
+    box-shadow: 0 4px 12px rgba($color-ink, 0.06);
+  }
+}
+
+.post-card__title {
+  font-size: 1.25rem;
+  margin-bottom: $space-sm;
+}
+
+.post-card__meta {
+  font-size: 0.875rem;
+  color: $color-muted;
+  margin-bottom: $space-sm;
+}
+
+.post-card__excerpt {
+  font-size: 0.9375rem;
+  color: $color-ink;
+  margin: 0;
+}
+
+// Edward Approved badge — corgi paw + "Ed Approved" stamp style
+.edward-approved {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-crimson;
+  padding: $space-xs $space-sm;
+  border: 1px solid $color-crimson;
+  border-radius: $border-radius;
+  background: rgba($color-cream, 0.9);
+  margin-bottom: $space-sm;
+}
+
+// Hero section
+// REPLACE: hero image — Emily + Edward outdoors (add url() when image is ready)
+.hero {
+  position: relative;
+  min-height: 280px;
+  background: $color-parchment center / cover no-repeat;
+  border-radius: $border-radius-lg;
+  margin-bottom: $space-xl;
+  display: flex;
+  align-items: flex-end;
+  padding: $space-xl;
+  background-image: linear-gradient(180deg, transparent 30%, rgba($color-ink, 0.6) 100%),
+    linear-gradient(135deg, rgba($color-forest, 0.3) 0%, rgba($color-crimson, 0.2) 50%, rgba($color-amber, 0.25) 100%);
+}
+
+.hero__content {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero__title {
+  color: white;
+  margin-bottom: $space-sm;
+}
+
+.hero__blurb {
+  font-size: 1.125rem;
+  max-width: 36em;
+  margin: 0;
+}
+
+// What's Here grid (3 columns)
+.whats-here {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-lg;
+  margin: $space-xl 0;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whats-here__item {
+  text-align: center;
+  padding: $space-lg;
+  background: rgba($color-cream, 0.6);
+  border-radius: $border-radius;
+  border: 1px solid rgba($color-crimson, 0.12);
+}
+
+.whats-here__icon {
+  font-size: 2rem;
+  margin-bottom: $space-sm;
+  color: $color-crimson;
+}
+
+.whats-here__title {
+  font-size: 1.125rem;
+  margin-bottom: $space-xs;
+}
+
+.whats-here__desc {
+  font-size: 0.875rem;
+  color: $color-muted;
+  margin: 0;
+}
+
+// Edward's Corner block
+.edwards-corner {
+  background: rgba($color-cream, 0.9);
+  border: 1px solid rgba($color-crimson, 0.2);
+  border-radius: $border-radius;
+  padding: $space-md;
+  font-style: italic;
+  color: $color-ink;
+}
+
+.edwards-corner__label {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-crimson;
+  margin-bottom: $space-sm;
+  font-style: normal;
+}
+
+// Pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $space-sm;
+  margin: $space-xl 0;
+  flex-wrap: wrap;
+}
+
+.pagination__link {
+  padding: $space-sm $space-md;
+  border: 1px solid $color-crimson;
+  color: $color-crimson;
+  border-radius: $border-radius;
+  text-decoration: none;
+
+  &:hover {
+    background: $color-crimson;
+    color: white;
+  }
+}
+
+.pagination__link--current {
+  background: $color-crimson;
+  color: white;
+}
+
+// Recipe/DIY meta (prep time, servings, etc.)
+.post-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  font-size: 0.875rem;
+  color: $color-muted;
+  margin-bottom: $space-lg;
+}
+
+.post-meta-inline__item {
+  &::after {
+    content: "·";
+    margin-left: $space-md;
+    color: $color-crimson;
+    opacity: 0.6;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+
+// Coming soon / placeholder
+.coming-soon {
+  text-align: center;
+  padding: $space-2xl $space-lg;
+  background: rgba($color-cream, 0.6);
+  border-radius: $border-radius-lg;
+  border: 1px dashed rgba($color-crimson, 0.3);
+}
+
+.coming-soon__title {
+  margin-bottom: $space-md;
+}
+
+.coming-soon__text {
+  color: $color-muted;
+  margin-bottom: $space-lg;
+}

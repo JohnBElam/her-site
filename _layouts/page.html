@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article class="page layout-with-sidebar">
+  <div class="main-content">
+    <header class="page__header">
+      <h1 class="page__title">{{ page.title }}</h1>
+    </header>
+    <div class="page__content section">
+      {{ content }}
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar__block">
+      <div class="sidebar__title">Edward's Corner</div>
+      {% assign quotes = site.data.edward_quotes.quotes %}
+      {% if quotes.size > 0 %}
+      {% assign day_index = "now" | date: "%j" | modulo: quotes.size %}
+      {% assign quote = quotes[day_index] %}
+      <p class="edwards-corner">{{ quote.text }}</p>
+      {% endif %}
+    </div>
+    <!-- TODO: Add Instagram embed placeholder in sidebar -->
+  </aside>
+</article>

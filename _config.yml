@@ -1,0 +1,52 @@
+# QuirkiCorgi — Emily Elam's personal site
+title: QuirkiCorgi
+tagline: "Made from scratch. Every single thing."
+description: "Recipes, remedies, crafts, and the daily adventures of Edward the Corgi."
+author:
+  name: Emily Elam
+  email: ""            # Emily will fill this in
+baseurl: ""
+url: ""                # Emily will fill this in
+
+permalink: /:year/:month/:day/:title/
+
+# Collections (for future expansion)
+collections:
+  recipes:
+    output: true
+    permalink: /recipes/:name/
+  diy:
+    output: true
+    permalink: /diy/:name/
+
+# Navigation
+nav_links:
+  - title: Home
+    url: /
+  - title: Recipes
+    url: /recipes/
+  - title: DIY & How-To
+    url: /diy/
+  - title: About
+    url: /about/
+  - title: Shop
+    url: /shop/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/page:num/"
+
+# TODO: Consider Netlify CMS or Decap CMS for easy no-code post editing
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - quirki-corgi-cursor-brief.md
