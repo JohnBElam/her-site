@@ -117,24 +117,23 @@
   margin-bottom: $space-sm;
 }
 
-// Hero section
-// REPLACE: hero image — Emily + Edward outdoors (add url() when image is ready)
+// Hero section — one box: text on top, photo underneath with warm tint
 .hero {
   position: relative;
-  min-height: 280px;
-  background: $color-parchment center / cover no-repeat;
   border-radius: $border-radius-lg;
   margin-bottom: $space-xl;
+  overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  padding: $space-xl;
-  background-image: linear-gradient(180deg, transparent 30%, rgba($color-ink, 0.6) 100%),
-    linear-gradient(135deg, rgba($color-forest, 0.3) 0%, rgba($color-crimson, 0.2) 50%, rgba($color-amber, 0.25) 100%);
+  flex-direction: column;
+  border: 1px solid rgba($color-crimson, 0.2);
+  box-shadow: 0 4px 20px rgba($color-ink, 0.06);
 }
 
 .hero__content {
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: $space-xl;
+  background: linear-gradient(135deg, rgba($color-ink, 0.88) 0%, rgba($color-forest, 0.85) 100%);
+  color: $color-cream;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero__title {
@@ -146,6 +145,32 @@
   font-size: 1.125rem;
   max-width: 36em;
   margin: 0;
+  line-height: 1.5;
+}
+
+.hero__image {
+  position: relative;
+  margin: 0;
+  line-height: 0;
+  max-height: 420px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    // Warm tint so the photo fits the editorial palette
+    filter: sepia(0.15) contrast(1.02);
+  }
+
+  .hero__image-tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba($color-parchment, 0.12) 0%, rgba($color-crimson, 0.08) 100%);
+    pointer-events: none;
+  }
 }
 
 // What's Here grid (3 columns)
@@ -230,6 +255,22 @@
 .pagination__link--current {
   background: $color-crimson;
   color: white;
+}
+
+// Post featured image
+.post__image {
+  margin: 0 0 $space-lg;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: 1px solid rgba($color-crimson, 0.15);
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+  }
 }
 
 // Recipe/DIY meta (prep time, servings, etc.)

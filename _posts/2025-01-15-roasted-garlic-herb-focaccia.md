@@ -5,7 +5,7 @@ date: 2025-01-15
 categories: [recipes]
 subcategory: baked-goods
 tags: [bread, garlic, herbs, vegetarian]
-image: /assets/images/posts/focaccia.jpg
+image: /assets/images/placeholder.svg
 prep_time: "20 min"
 cook_time: "25 min"
 servings: 8
