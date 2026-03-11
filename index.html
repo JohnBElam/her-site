@@ -8,48 +8,48 @@ pagination:
 
 <div class="home">
   <section class="hero" aria-label="Welcome">
-    <div class="hero__content">
+    <div class="hero__content reveal">
       <h1 class="hero__title">{{ site.title }}</h1>
       <p class="hero__blurb">{{ site.tagline }} Recipes, how-to guides, and the daily adventures of Edward the Corgi.</p>
     </div>
-    <figure class="hero__image">
+    <figure class="hero__image reveal">
       <img src="{{ '/assets/images/hero/emily-edward-winter.png' | relative_url }}" alt="Emily and Edward on a snowy bridge in the mountains">
       <span class="hero__image-tint" aria-hidden="true"></span>
     </figure>
   </section>
 
-  <section class="welcome section">
+  <section class="welcome section reveal">
     <p>I've been cooking, making, building, and fixing things my whole life. This is where I share recipes (the real ones), how-to guides for the things I make around the house, and whatever project has taken over the kitchen table this week. Edward will be involved. She always is.</p>
   </section>
 
-  <hr>
+  <hr class="reveal">
 
-  <h2 class="section__title">What's Here</h2>
-  <div class="whats-here">
-    <div class="whats-here__item">
+  <h2 class="section__title reveal">What's Here</h2>
+  <div class="whats-here reveal-stagger-children">
+    <div class="whats-here__item reveal">
       <div class="whats-here__icon">🥖</div>
       <h3 class="whats-here__title">Recipes</h3>
       <p class="whats-here__desc">Meals, baked goods, dog treats, and drinks — made from scratch.</p>
     </div>
-    <div class="whats-here__item">
+    <div class="whats-here__item reveal">
       <div class="whats-here__icon">🪴</div>
       <h3 class="whats-here__title">DIY Guides</h3>
       <p class="whats-here__desc">Soaps, salves, cleaners, crafts, and stained glass how-tos.</p>
     </div>
-    <div class="whats-here__item">
+    <div class="whats-here__item reveal">
       <div class="whats-here__icon">✂️</div>
       <h3 class="whats-here__title">Crafts</h3>
       <p class="whats-here__desc">Sewing, foraging, and turning the everyday into something special.</p>
     </div>
   </div>
 
-  <hr>
+  <hr class="reveal">
 
   <div class="layout-with-sidebar">
-    <div class="main-content">
-      <h2 class="section__title">Latest Posts</h2>
+    <div class="main-content reveal-stagger-children">
+      <h2 class="section__title reveal">Latest Posts</h2>
       {% for post in paginator.posts %}
-      <article class="post-card">
+      <article class="post-card reveal">
         <h3 class="post-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <div class="post-card__meta">{{ post.date | date: "%B %d, %Y" }} {% if post.categories.size > 0 %} · {{ post.categories | join: ", " }}{% endif %}</div>
         {% if post.edward_approved %}
@@ -67,7 +67,7 @@ pagination:
       {% endfor %}
 
       {% if paginator.total_pages > 1 %}
-      <nav class="pagination" aria-label="Posts pagination">
+      <nav class="pagination reveal" aria-label="Posts pagination">
         {% if paginator.previous_page %}
         <a class="pagination__link" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
         {% endif %}
@@ -79,7 +79,7 @@ pagination:
       {% endif %}
     </div>
     <aside class="sidebar">
-      <div class="sidebar__block">
+      <div class="sidebar__block reveal">
         <div class="sidebar__title">Edward's Corner</div>
         {% assign quotes = site.data.edward_quotes.quotes %}
         {% if quotes.size > 0 %}

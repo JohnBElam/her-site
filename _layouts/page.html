@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article class="page layout-with-sidebar">
-  <div class="main-content">
+  <div class="main-content reveal">
     <header class="page__header">
       <h1 class="page__title">{{ page.title }}</h1>
     </header>
@@ -12,7 +12,7 @@ layout: default
     </div>
   </div>
   <aside class="sidebar">
-    <div class="sidebar__block">
+    <div class="sidebar__block reveal">
       <div class="sidebar__title">Edward's Corner</div>
       {% assign quotes = site.data.edward_quotes.quotes %}
       {% if quotes.size > 0 %}
